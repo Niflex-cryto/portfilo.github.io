@@ -365,101 +365,100 @@ h1 {
     100% { background-position: 0% 50%; }
 }
 
-/* Enhanced Responsive Design */
+/* Responsive Design */
+@media (max-width: 1024px) {
+    section {
+        margin: 2rem 1rem;
+        padding: 2rem 1.5rem;
+    }
+
+    .about-content {
+        gap: 2rem;
+    }
+
+    .project-grid,
+    .skill-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+}
+
 @media (max-width: 768px) {
     header {
+        padding: 0.8rem;
         flex-direction: column;
-        padding: 1rem 0;
-        position: sticky;
-        top: 0;
+        gap: 1rem;
     }
 
     nav ul {
-        flex-direction: column;
-        text-align: center;
+        flex-wrap: wrap;
+        justify-content: center;
         gap: 1rem;
-        padding: 1rem 0;
     }
 
     nav a {
-        display: block;
-        padding: 0.8rem 1rem;
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 8px;
+        font-size: 1rem;
+        padding: 0.4rem 0.8rem;
     }
 
     .social-links {
-        padding: 1rem;
-        flex-wrap: wrap;
+        padding-right: 0;
         justify-content: center;
     }
 
     section {
-        margin: 1rem;
         padding: 2rem 1rem;
-        border-radius: 10px;
     }
 
     section:first-of-type {
-        margin-top: 1rem;
+        margin-top: 8rem;
     }
 
     .about-content {
         flex-direction: column;
         text-align: center;
-        gap: 2rem;
     }
 
     .about-content img {
-        width: 200px;
-        height: 200px;
+        width: 250px;
+        height: 250px;
     }
 
     .about-text p {
-        font-size: 1rem;
-        padding: 0 1rem;
+        text-align: left;
     }
 
     .project-grid {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-
-    .project {
-        margin: 0 1rem;
-    }
-
-    .project img {
-        height: 180px;
+        max-width: 500px;
+        margin: 0 auto;
     }
 
     .skill-grid {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
-        padding: 0 1rem;
+        max-width: 500px;
+        margin: 0 auto;
     }
 
     .contact-info p {
-        flex-direction: row;
+        flex-direction: column;
         align-items: center;
-        padding: 1rem;
-        margin: 1rem;
-        font-size: 0.9rem;
+        text-align: center;
+        gap: 0.5rem;
     }
 }
 
 @media (max-width: 480px) {
     body {
-        font-size: 14px;
+        font-size: 0.95rem;
     }
 
     header {
-        padding: 0.5rem 0;
+        padding: 0.6rem;
     }
 
     nav a {
-        font-size: 1rem;
-        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+        padding: 0.3rem 0.6rem;
     }
 
     .social-links {
@@ -471,12 +470,12 @@ h1 {
     }
 
     .about-content img {
-        width: 150px;
-        height: 150px;
+        width: 200px;
+        height: 200px;
     }
 
     h1 {
-        font-size: 1.6rem;
+        font-size: 2rem;
         margin-bottom: 1.5rem;
     }
 
@@ -485,11 +484,11 @@ h1 {
     }
 
     .project {
-        margin: 0;
+        margin-bottom: 1.5rem;
     }
 
     .project h2 {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
         padding: 1rem 1rem 0.5rem;
     }
 
@@ -502,27 +501,25 @@ h1 {
     }
 
     .skill h2 {
-        font-size: 1.3rem;
+        font-size: 1.4rem;
         margin-bottom: 1.5rem;
     }
 
     .skill-category {
-        padding: 0.8rem;
-        margin-bottom: 0.8rem;
+        padding: 1rem;
     }
 
     .skill-category h3 {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
 
     .contact-info p {
-        margin: 0.8rem;
-        padding: 0.8rem;
-        gap: 0.8rem;
+        margin-bottom: 1.5rem;
+        font-size: 0.9rem;
     }
 
     .contact-info i {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
     }
 
     .btn {
@@ -531,26 +528,24 @@ h1 {
     }
 
     #top-button {
-        bottom: 1rem;
         right: 1rem;
-        width: 40px;
-        height: 40px;
-        font-size: 0.9rem;
+        bottom: 1rem;
+        padding: 0.8rem;
     }
 }
 
-/* Small phones */
 @media (max-width: 360px) {
     body {
-        font-size: 13px;
+        font-size: 0.9rem;
     }
 
     header {
-        padding: 0.3rem 0;
+        padding: 0.5rem;
     }
 
     nav a {
-        padding: 0.5rem 0.8rem;
+        font-size: 0.85rem;
+        padding: 0.3rem 0.5rem;
     }
 
     .social-links {
@@ -558,17 +553,17 @@ h1 {
     }
 
     .about-content img {
-        width: 120px;
-        height: 120px;
+        width: 180px;
+        height: 180px;
     }
 
     section {
         padding: 1.5rem 0.8rem;
-        margin: 0.8rem;
+        margin: 1.5rem 0.8rem;
     }
 
     .project img {
-        height: 150px;
+        height: 180px;
     }
 
     .skill {
@@ -576,14 +571,12 @@ h1 {
     }
 
     .contact-info p {
-        flex-direction: column;
-        text-align: center;
-        padding: 0.8rem;
-        margin: 0.6rem;
+        gap: 0.3rem;
+        margin-bottom: 1.2rem;
     }
 
     .contact-info span {
-        min-width: auto;
+        font-size: 0.85rem;
     }
 
     .btn {
