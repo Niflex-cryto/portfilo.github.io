@@ -18,26 +18,6 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
-        <div class="social-links">
-            <a href="https://www.facebook.com/niflex.og.2025" target="_blank" aria-label="Facebook Profile">
-                <i class="fa-brands fa-facebook"></i>
-            </a>
-            <a href="https://github.com/niflex001" target="_blank" aria-label="GitHub Profile">
-                <i class="fa-brands fa-github"></i>
-            </a>
-            <a href="https://linkedin.com/in/ayodeji-oluwanifemi" target="_blank" aria-label="LinkedIn Profile">
-                <i class="fa-brands fa-linkedin"></i>
-            </a>
-            <a href="https://x.com/niflex4279922?t=os3xCkFGuJ-EnL-BmLxL5w&s=09" target="_blank" aria-label="Twitter Profile">
-                <i class="fa-brands fa-twitter"></i>
-            </a>
-            <a href="https://www.tiktok.com/@niflex1?_t=ZS-8wex8RwlTA2&_r=1" target="_blank" aria-label="TikTok Profile">
-                <i class="fa-brands fa-tiktok"></i>
-            </a>
-            <a href="https://www.instagram.com/niflex0001?igsh=Ymg0d3dyNmN6cGw3" target="_blank" aria-label="Instagram Profile">
-                <i class="fa-brands fa-instagram"></i>
-            </a>
-        </div>
     </header>
     <section id="about">
         <h1>About me</h1>
@@ -53,16 +33,38 @@
         <h1>My Projects</h1>
         <div class="project-grid">
             <div class="project">
-                <img src="image.png" alt="Login/Sign up Page Project">
-                <h2>Authentication System</h2>
-                <p>A secure and user-friendly login/sign up system with modern UI design and robust validation.</p>
-                <a href="https://github.com/niflex001/auth-system" class="btn" target="_blank">View Details</a>
+                <div class="project-gallery">
+                    <img src="image.png" alt="Login/Sign up Page Project" class="main-image">
+                    <div class="project-thumbnails">
+                        <img src="image.png" alt="Sign Up Form" onclick="changeProjectImage(this)">
+                        <img src="image.png" alt="Form Validation" onclick="changeProjectImage(this)">
+                        <img src="image.png" alt="Mobile View" onclick="changeProjectImage(this)">
+                    </div>
+                </div>
+                <h2>Modern Sign Up Form</h2>
+                <p class="project-summary">A sleek and responsive sign-up form with comprehensive validation. Features include real-time input validation, mobile responsiveness, and a user-friendly interface. Includes fields for personal details, gender selection, and terms agreement with modern styling.</p>
+                <div class="project-links">
+                    <a href="https://fancy-snickerdoodle-185f1a.netlify.app/" class="btn demo-btn" target="_blank">
+                        <i class="fa-solid fa-play"></i> View Live Project
+                    </a>
+                </div>
             </div>
             <div class="project">
-                <img src="img.png" alt="Country Information Project">
+                <div class="project-gallery">
+                    <img src="img.png" alt="Country Information Project - Nigeria Details" class="main-image">
+                    <div class="project-thumbnails">
+                        <img src="img.png" alt="Search Interface with Nigeria" onclick="changeProjectImage(this)">
+                        <img src="img.png" alt="Nigeria Flag and Details" onclick="changeProjectImage(this)">
+                        <img src="img.png" alt="Nigeria Coat of Arms" onclick="changeProjectImage(this)">
+                    </div>
+                </div>
                 <h2>Country Explorer</h2>
-                <p>An interactive web application that displays country information including coat of arms, flag, and map based on user input.</p>
-                <a href="https://github.com/niflex001/country-explorer" class="btn" target="_blank">View Details</a>
+                <p class="project-summary">An interactive web application that displays comprehensive country information including national symbols, flags, coat of arms, and geographic location. Features a clean interface with Google Maps integration for precise location viewing. Search any country to discover its details, currency, region, and more.</p>
+                <div class="project-links">
+                    <a href="https://6837eb558169c620db35f245--unique-cendol-afd21d.netlify.app/" class="btn demo-btn" target="_blank">
+                        <i class="fa-solid fa-play"></i> View Live Project
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -118,10 +120,77 @@
                 <a href="https://wa.me/2347040363597">+2347040363597</a>
             </p>
         </div>
+        <h3>Social Media Links</h3>
+        <div class="social-links">
+            <a href="https://www.facebook.com/niflex.og.2025" target="_blank" aria-label="Facebook Profile">
+                <i class="fa-brands fa-facebook"></i>
+            </a>
+            <a href="https://github.com/niflex001" target="_blank" aria-label="GitHub Profile">
+                <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://linkedin.com/in/ayodeji-oluwanifemi" target="_blank" aria-label="LinkedIn Profile">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="https://x.com/niflex4279922?t=os3xCkFGuJ-EnL-BmLxL5w&s=09" target="_blank" aria-label="Twitter Profile">
+                <i class="fa-brands fa-twitter"></i>
+            </a>
+            <a href="https://www.tiktok.com/@niflex1?_t=ZS-8wex8RwlTA2&_r=1" target="_blank" aria-label="TikTok Profile">
+                <i class="fa-brands fa-tiktok"></i>
+            </a>
+            <a href="https://www.instagram.com/niflex0001?igsh=Ymg0d3dyNmN6cGw3" target="_blank" aria-label="Instagram Profile">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+        </div>
     </section>    
     <button id="top-button" class="btn" aria-label="Back to top">
         <i class="fa-solid fa-arrow-up"></i>
     </button>
     <script src="index.js"></script>
+    <script>
+    function toggleProjectDetails(button) {
+        const project = button.closest('.project');
+        const details = project.querySelector('.project-details');
+        const isExpanded = details.classList.contains('show');
+        
+        // Close all other open project details
+        document.querySelectorAll('.project-details.show').forEach(detail => {
+            if (detail !== details) {
+                detail.classList.remove('show');
+                detail.previousElementSibling.textContent = 'View Details';
+            }
+        });
+
+        // Toggle current project details
+        details.classList.toggle('show');
+        button.textContent = isExpanded ? 'View Details' : 'Hide Details';
+        
+        // Smooth scroll to project if expanding
+        if (!isExpanded) {
+            project.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }
+
+    function changeProjectImage(thumbnail) {
+        const gallery = thumbnail.closest('.project-gallery');
+        const mainImage = gallery.querySelector('.main-image');
+        const currentSrc = mainImage.src;
+        
+        // Add fade-out effect
+        mainImage.style.opacity = '0';
+        
+        // Change image and fade in after a short delay
+        setTimeout(() => {
+            mainImage.src = thumbnail.src;
+            mainImage.alt = thumbnail.alt;
+            mainImage.style.opacity = '1';
+        }, 200);
+        
+        // Update thumbnails to show which is selected
+        gallery.querySelectorAll('.project-thumbnails img').forEach(img => {
+            img.classList.remove('active');
+        });
+        thumbnail.classList.add('active');
+    }
+    </script>
 </body>
 </html>
