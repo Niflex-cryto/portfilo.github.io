@@ -28,6 +28,30 @@ topButton.addEventListener('click', () => {
     });
 });
 
+// Project details toggle functionality
+function toggleProjectDetails(button) {
+    const project = button.closest('.project');
+    const details = project.querySelector('.project-details');
+    const isExpanded = details.classList.contains('show');
+    
+    // Close all other open project details
+    document.querySelectorAll('.project-details.show').forEach(detail => {
+        if (detail !== details) {
+            detail.classList.remove('show');
+            detail.previousElementSibling.textContent = 'View Details';
+        }
+    });
+
+    // Toggle current project details
+    details.classList.toggle('show');
+    button.textContent = isExpanded ? 'View Details' : 'Hide Details';
+    
+    // Smooth scroll to project if expanding
+    if (!isExpanded) {
+        project.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+}
+
 // Add animation to project cards when they come into view
 const projectCards = document.querySelectorAll('.project');
 const observer = new IntersectionObserver((entries) => {
